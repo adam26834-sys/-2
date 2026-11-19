@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Akkusativ أم Dativ؟ – إنفوجرافيك وتدريب</title>
+<style>
+:root{--bg:#f4f6fb;--card:#fff;--tx:#14213d;--mut:#5b6580;--akk:#e63946;--akk2:#fde8ea;--dat:#1d6fd8;--dat2:#e3eefc;--nom:#2a9d6f;--nom2:#e0f4ec;--ok:#2a9d6f;--bad:#e63946;--bd:#e2e6f0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1424;--card:#1a2038;--tx:#eef1fa;--mut:#9aa5c4;--akk2:#3a1d27;--dat2:#16294a;--nom2:#14352b;--bd:#2c3556;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1424;--card:#1a2038;--tx:#eef1fa;--mut:#9aa5c4;--akk2:#3a1d27;--dat2:#16294a;--nom2:#14352b;--bd:#2c3556;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.6}
+.wrap{max-width:720px;margin:0 auto;padding:16px}
+.hero{background:linear-gradient(135deg,#1d6fd8,#6a3df0 55%,#e63946);color:#fff;border-radius:24px;padding:28px 20px;text-align:center}
+.hero h1{margin:0 0 6px;font-size:1.7rem}
+.hero p{margin:0;opacity:.92}
+.badge{display:inline-block;background:#ffffff30;border-radius:99px;padding:2px 12px;font-size:.85rem;margin-bottom:10px}
+h2{font-size:1.25rem;margin:28px 0 12px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:14px;margin-bottom:12px;border-inline-start-width:6px}
+.card.akk{border-inline-start-color:var(--akk)}.card.dat{border-inline-start-color:var(--dat)}.card.nom{border-inline-start-color:var(--nom)}
+.card .top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.verb{font-weight:800;font-size:1.15rem;direction:ltr}
+.tag{font-size:.8rem;font-weight:700;border-radius:99px;padding:2px 10px;color:#fff}
+.akk .tag{background:var(--akk)}.dat .tag{background:var(--dat)}.nom .tag{background:var(--nom)}
+.de{direction:ltr;text-align:left;font-size:1.05rem;margin:8px 0 2px;font-weight:600}
+.ar{color:var(--mut);font-size:.92rem}
+.k{border-radius:6px;padding:0 4px}
+.k.a{background:var(--akk2);color:var(--akk)}.k.d{background:var(--dat2);color:var(--dat)}.k.n{background:var(--nom2);color:var(--nom)}
+.tbl{overflow-x:auto;border-radius:16px;border:1px solid var(--bd);background:var(--card)}
+table{width:100%;border-collapse:collapse;direction:ltr;text-align:center;min-width:420px}
+th,td{padding:9px 6px;border-bottom:1px solid var(--bd)}
+th.n{background:var(--nom2);color:var(--nom)}th.a{background:var(--akk2);color:var(--akk)}th.d{background:var(--dat2);color:var(--dat)}
+td:first-child{font-weight:700}
+.trick{background:var(--card);border:2px dashed var(--dat);border-radius:18px;padding:16px;text-align:center}
+.flip{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;direction:ltr;font-weight:700;margin:8px 0}
+.flip span{padding:6px 10px;border-radius:12px}
+.q{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:16px;margin-bottom:12px}
+.qs{direction:ltr;text-align:left;font-size:1.1rem;font-weight:700;margin-bottom:4px}
+.hint{color:var(--mut);font-size:.88rem;margin-bottom:10px}
+.opts{display:flex;gap:8px;flex-wrap:wrap;direction:ltr}
+.opts button{flex:1;min-width:90px;font:inherit;font-weight:700;padding:12px;border-radius:14px;border:2px solid var(--bd);background:var(--bg);color:var(--tx);cursor:pointer}
+.opts button.ok{background:var(--ok);border-color:var(--ok);color:#fff}
+.opts button.bad{background:var(--bad);border-color:var(--bad);color:#fff}
+.fb{margin-top:10px;font-size:.92rem;min-height:1.2em}
+.score{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:8px 14px;display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.bar{height:8px;background:var(--bd);border-radius:9px;flex:1;margin:0 12px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--dat),var(--nom));transition:width .3s}
+.res{display:none;text-align:center;background:linear-gradient(135deg,#2a9d6f,#1d6fd8);color:#fff;border-radius:20px;padding:22px}
+.res button{margin-top:10px;font:inherit;font-weight:700;padding:10px 22px;border:0;border-radius:99px;cursor:pointer}
+.foot{text-align:center;color:var(--mut);font-size:.85rem;margin:24px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero">
+<div class="badge">Deutsch · A1</div>
+<h1>Akkusativ أم Dativ؟</h1>
+<p>أفعال وصف الشقة وإبداء الرأي – الشرح والتدريب</p>
+</div>
+
+<h2>🧩 الأفعال الستة على السبورة</h2>
+
+<div class="card nom"><div class="top"><span class="verb">sein</span><span class="tag">Nominativ · بدون مفعول</span></div>
+<div class="de"><span class="k n">Die Wohnung</span> ist toll.</div><div class="ar">الشقة رائعة — الصفة تصف الفاعل مباشرة.</div></div>
+
+<div class="card akk"><div class="top"><span class="verb">finden + Akk</span><span class="tag">Akkusativ</span></div>
+<div class="de">Ich finde <span class="k a">die Wohnung</span> toll.</div><div class="ar">أرى الشقة رائعة. السؤال: Wie finden Sie die Wohnung؟</div></div>
+
+<div class="card akk"><div class="top"><span class="verb">mögen + Akk</span><span class="tag">Akkusativ</span></div>
+<div class="de">Ich mag <span class="k a">den Garten</span> gar nicht / besonders.</div><div class="ar">لا أحب الحديقة إطلاقًا / أحبها بشكل خاص.</div></div>
+
+<div class="card nom"><div class="top"><span class="verb">aussehen</span><span class="tag">بدون مفعول</span></div>
+<div class="de"><span class="k n">Die Wohnung</span> sieht schön aus.</div><div class="ar">تبدو الشقة جميلة — فعل منفصل: sieht … aus.</div></div>
+
+<div class="card dat"><div class="top"><span class="verb">gefallen + Dat</span><span class="tag">Dativ</span></div>
+<div class="de"><span class="k n">Der Balkon</span> gefällt <span class="k d">mir</span> besonders.</div><div class="ar">تعجبني الشرفة كثيرًا. الشيء هو الفاعل، والشخص في Dativ.</div></div>
+
+<div class="card dat"><div class="top"><span class="verb">zeigen + Dat + Akk</span><span class="tag">Dativ + Akkusativ</span></div>
+<div class="de">Ich zeige <span class="k d">dir</span> <span class="k a">die Wohnung</span>.</div><div class="ar">أُريك الشقة. الشخص = Dativ، والشيء = Akkusativ.</div></div>
+
+<h2>📊 جدول الضمائر</h2>
+<div class="tbl"><table>
+<tr><th class="n">Nominativ</th><th class="a">Akkusativ</th><th class="d">Dativ</th></tr>
+<tr><td>ich</td><td>mich</td><td>mir</td></tr>
+<tr><td>du</td><td>dich</td><td>dir</td></tr>
+<tr><td>er</td><td>ihn</td><td>ihm</td></tr>
+<tr><td>sie</td><td>sie</td><td>ihr</td></tr>
+<tr><td>wir</td><td>uns</td><td>uns</td></tr>
+<tr><td>ihr</td><td>euch</td><td>euch</td></tr>
+<tr><td>Sie</td><td>Sie</td><td>Ihnen</td></tr>
+</table></div>
+
+<h2>🔄 حيلة المعلم</h2>
+<div class="trick">
+<b>mögen ⇄ gefallen</b> — نفس المعنى، لكن الأدوار تنعكس:
+<div class="flip"><span class="k n">Ich</span> mag <span class="k a">den Balkon</span>.</div>
+<div class="flip"><span class="k n">Der Balkon</span> gefällt <span class="k d">mir</span>.</div>
+<div class="ar">إن كان الشخص هو من «يحب» → Akkusativ. إن كان الشيء هو من «يعجب» → الشخص Dativ.</div>
+</div>
+
+<h2>🔤 الأرقام والمذكر للتذكر</h2>
+<div class="tbl"><table>
+<tr><th class="n">Nom</th><th class="a">Akk</th><th class="d">Dat</th></tr>
+<tr><td>der Garten</td><td>den Garten</td><td>dem Garten</td></tr>
+<tr><td>die Wohnung</td><td>die Wohnung</td><td>der Wohnung</td></tr>
+<tr><td>das Zimmer</td><td>das Zimmer</td><td>dem Zimmer</td></tr>
+</table></div>
+<p class="ar">المذكر وحده يتغير في Akkusativ: der → <b>den</b>.</p>
+
+<h2>✍️ التدريب (10 أسئلة)</h2>
+<div class="score"><b id="sc">0 / 10</b><div class="bar"><i id="pg"></i></div><span id="an">0/10</span></div>
+<div id="quiz"></div>
+<div class="res" id="res"><div style="font-size:2.2rem" id="em">🏆</div><h3 id="rt"></h3><div id="rm"></div><button onclick="reset()">أعد التدريب 🔁</button></div>
+
+<div class="foot">صُنع للمراجعة بعد درس A1 · Viel Erfolg! 🇩🇪</div>
+</div>
+
+<script>
+var Q=[
+["Ich mag ___ Garten.",["den","dem"],0,"mögen + Akkusativ، والمذكر: den."],
+["Der Balkon gefällt ___.",["mich","mir"],1,"gefallen + Dativ → mir."],
+["Ich zeige ___ die Wohnung. (meine Freundin)",["meine Freundin","meiner Freundin"],1,"zeigen + Dativ للشخص: meiner Freundin."],
+["Der Garten gefällt ___ nicht. (ich)",["mir","mich"],0,"gefallen دائمًا مع Dativ."],
+["Ich finde ___ Balkon schön.",["den","dem"],0,"finden + Akkusativ، والمذكر: den."],
+["Die Wohnung ___ schön aus.",["sieht","ist"],0,"aussehen → sieht … aus."],
+["Ich zeige ___ die Wohnung. (du)",["dich","dir"],1,"الشخص في zeigen = Dativ → dir."],
+["Das Zimmer ___ toll.",["ist","finde"],0,"sein بدون مفعول: Das Zimmer ist toll."],
+["Wie gefällt ___ die Wohnung? (Sie)",["Sie","Ihnen"],1,"gefallen + Dativ → Ihnen."],
+["Ich mag ___ nicht. (er)",["ihn","ihm"],0,"mögen + Akkusativ → ihn."]
+];
+var done=0,score=0;
+function build(){
+ var h="";
+ Q.forEach(function(q,i){
+  h+='<div class="q"><div class="hint">سؤال '+(i+1)+'</div><div class="qs">'+q[0]+'</div><div class="opts">';
+  q[1].forEach(function(o,j){h+='<button data-q="'+i+'" data-o="'+j+'">'+o+'</button>';});
+  h+='</div><div class="fb" id="fb'+i+'"></div></div>';
+ });
+ document.getElementById("quiz").innerHTML=h;
+ document.querySelectorAll(".opts button").forEach(function(b){b.onclick=pick;});
+}
+function pick(e){
+ var b=e.currentTarget,i=+b.dataset.q,o=+b.dataset.o,q=Q[i];
+ var btns=b.parentNode.querySelectorAll("button");
+ if(btns[0].disabled)return;
+ btns.forEach(function(x){x.disabled=true;});
+ var fb=document.getElementById("fb"+i);
+ if(o===q[2]){b.classList.add("ok");score++;fb.textContent="✅ صحيح! "+q[3];}
+ else{b.classList.add("bad");btns[q[2]].classList.add("ok");fb.textContent="❌ الصحيح: "+q[1][q[2]]+" — "+q[3];}
+ done++;
+ document.getElementById("sc").textContent=score+" / 10";
+ document.getElementById("an").textContent=done+"/10";
+ document.getElementById("pg").style.width=(done*10)+"%";
+ if(done===10)finish();
+}
+function finish(){
+ var r=document.getElementById("res");r.style.display="block";
+ document.getElementById("em").textContent=score>=9?"🏆":score>=7?"🎉":score>=5?"👍":"💪";
+ document.getElementById("rt").textContent="نتيجتك: "+score+" من 10";
+ document.getElementById("rm").textContent=score>=9?"ممتاز! أتقنت القاعدة.":score>=7?"جيد جدًا، راجع الأخطاء فقط.":"راجع جدول الضمائر وحيلة mögen ⇄ gefallen ثم أعد المحاولة.";
+ r.scrollIntoView({behavior:"smooth",block:"center"});
+}
+function reset(){done=0;score=0;document.getElementById("res").style.display="none";document.getElementById("sc").textContent="0 / 10";document.getElementById("an").textContent="0/10";document.getElementById("pg").style.width="0";build();window.scrollTo({top:document.getElementById("quiz").offsetTop-80,behavior:"smooth"});}
+build();
+</script>
+</body>
+</html>
